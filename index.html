@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/mycss.css" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			document.documentElement.style.fontSize = innerWidth / 30 + "px";
+			$('body').on('touchmove', function(event) {
+				event.preventDefault();
+			});
+
+			var $body = $('body');
+			document.title = '活动列表';
+			// hack在微信等webview中无法修改document.title的情况
+		</script>
+		<script type="text/javascript">
+			document.addEventListener("WeixinJSBridgeReady", function() {
+			var med = new Audio();
+			med.src = "attraction.mp3"
+			med.play();
+}, false);
+
+function bf() {
+	var audio = document.getElementById('music1');
+	if(audio !== null) {
+		if(audio.paused) {
+			audio.play();
+		} else {
+			audio.pause();
+		}
+	}
+}</script>
+		
+
+	</head>
+
+	    <body onmousedown="show_coords(event)">
+		<div class="boxbig">
+			<div style="backgrxcound: rgba(0,0,0,.3);height: 2.8rem;">
+				<ul class="head">
+					<li><img src="img/head.png" style="height: 2.8rem;width: 2.8rem;" /></li>
+					<li><img src="img/jinbi.png" style="width: 0.7rem;height: 0.7rem;" />654654</li>
+					<li class="music" id="audio" onclick="bf();">
+						<audio autoplay preload id="music1" loop="loop" src="attraction.mp3">
+						</audio>
+					</li>				
+					<li>规则</li>
+				</ul>
+			</div>
+			<p style="color: white;background: #0A900B;
+		     width: 17%;position: absolute;
+		     right:0;
+		     padding-bottom: 0.2rem;padding-left: 0.5rem;">
+				<img src="img/clock.png" / style="width: 1rem;height: 1rem;vertical-align: middle;margin-right: 0.3rem;"><span id="lefttime">23</span><span>"</span>
+			</p>
+			<p class="title">和值1.9倍</p>
+			<ul class="fourbox">
+				<li id="t1" title="t1" class="top19" style="color: red;">单</li>
+				<li id="t2"  title="t2" class="top19" style="color: cornflowerblue">双</li>
+				<li id="t3"  title="t3" class="top19" style="color: white">大</li>
+				<li id="t4"   title="t4"class="top19" style="color: white">小</li>
+			</ul>
+			<p class="title">点数出现1个号码得2倍、2个得3倍、3个得4倍</p>
+			<ul class="sixbox lih" id="dandu">
+				<li id="h1"><img src="img/touzi-1.png" /></li>
+				<li id="h2"><img src="img/touzi-2.png" /></li>
+				<li id="h3"><img src="img/touzi-3.png" /></li>
+				<li id="h4"><img src="img/touzi-4.png" /></li>
+				<li id="h5"><img src="img/touzi-5.png" /></li>
+				<li id="h6"><img src="img/touzi-6.png" /></li>
+			</ul>
+			
+			<p class="title">和值</p>
+			<ul class="fivebox" id="hezhi1">
+				<li  id="m1">3
+					<p>150倍</p>
+				</li>
+				<li  id="m2">4
+					<p>50倍</p>
+				</li>
+				<li id="m3">5
+					<p>25倍</p>
+				</li>
+				<li id="m4">6
+					<p>15倍</p>
+				</li>
+				<li  id="m5">7
+					<p>12倍</p>
+				</li>
+			</ul>
+			<ul class="sixbox2" id="hezhi2">
+				<li   id="m6" >8
+					<h5>8倍</h5></li>
+				<li    id="m7">9
+					<h5>6倍</h5></li>
+				<li   id="m8">10
+					<h5>6倍</h5></li>
+				<li    id="m9">11
+					<h5>6倍</h5></li>
+				<li    id="m10">12
+					<h5>6倍</h5></li>
+				<li     id="m11">13
+					<h5>8倍</h5></li>
+			</ul>
+			<ul class="fivebox" id="hezhi3">
+				<li     id="m12">14
+					<p>12倍</p>
+				</li>
+				<li     id="m13">15
+					<p>15倍</p>
+				</li>
+				<li     id="m14">16
+					<p>25倍</p>
+				</li>
+				<li     id="m15">17
+					<p>50倍</p>
+				</li>
+				<li     id="m16">18
+					<p>150倍</p>
+				</li>
+			</ul>
+			<p class="title">3同号150倍,通选24倍</p>
+			<ul class="sixbox lih" id="hezhi4">
+				<li id="b1"><img src="img/3-1.png" /></li>
+				<li id="b2"><img src="img/3-2.png" /></li>
+				<li id="b3"><img src="img/3-3.png" /></li>
+				<li id="b4"><img src="img/3-4.png" /></li>
+				<li id="b5"><img src="img/3-5.png" /></li>
+				<li id="b6"><img src="img/3-6.png" /></li>
+			</ul>
+			<p></p>
+			<ul class="sixbox nob" id="hezhi5">
+				<li class="tx25"><img src="img/3-1.png" /></li>
+				<li class="tx25"><img src="img/3-2.png" /></li>
+				<li class="tx25"><img src="img/3-3.png" /></li>
+				<li class="tx25"><img src="img/3-4.png" /></li>
+				<li class="tx25"><img src="img/3-5.png" /></li>
+				<li class="tx25"><img src="img/3-6.png" /></li>
+			</ul>
+			<div class="kaijiang">
+				<ul>
+					<li style="background: yellow;color: black;width: 2rem;height: 1.5rem;border-radius: 0%;">Noa</li>
+					<li>往</li>
+					<li>期</li>
+					<li>开</li>
+					<li>奖</li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+				<ul>
+					<li>大</li>
+					<li>12</li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+					<li><img src="img/touzi-1.png" /></li>
+				</ul>
+			</div>
+			<div class="duzhubox">
+				<ul class="duzhu">
+					<li><img src="img/06-10.png" class="samll" id="cm10"/></li>
+					<li><img src="img/03-50.png" class="samll"  id="cm50"/></li>
+					<li><img src="img/05-100.png" class="samll"  id="cm100"/></li>
+					<li><img src="img/200-da.png" class="samll" id="cm200"/></li>
+					<li><img src="img/04-500.png" class="samll"  id="cm500"/></li>
+				</ul>
+				<script type="text/javascript" src="js/myjs.js"></script>
+			</div>
+		</div>
+
+		<img src="img/03-50.png" style="display: none;" id="img50"/>
+		<img src="img/02-200.png" style="display: none;" id="img200"/>
+		<img src="img/04-500.png" style="display: none;" id="img500"/>
+		<img src="img/05-100.png" style="display: none;" id="img100"/>
+		<img src="img/06-10.png" style="display: none;" id="img10"/>		
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-2"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-2"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-2"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-2"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-2"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-3"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-3"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-3"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-3"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-3"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-4"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-4"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-4"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-4"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-4"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-5"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-5"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-5"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-5"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-5"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-6"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-6"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-6"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-6"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-6"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-7"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-7"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-7"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-7"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-7"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-8"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-8"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-8"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-8"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-8"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-9"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-9"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-9"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-9"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-9"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-10"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-10"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-10"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-10"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-10"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-11"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-11"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-11"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-11"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-11"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-12"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-12"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-12"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-12"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-12"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-13"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-13"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-13"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-13"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-13"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-14"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-14"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-14"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-14"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-14"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-15"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-15"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-15"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-15"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-15"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-16"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-16"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-16"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-16"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-16"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-17"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-17"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-17"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-17"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-17"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-18"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-18"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-18"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-18"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-18"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-19"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-19"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-19"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-19"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-19"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-20"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-20"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-20"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-20"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-20"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-21"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-21"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-21"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-21"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-21"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-22"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-22"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-22"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-22"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-22"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-23"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-23"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-23"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-23"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-23"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-24"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-24"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-24"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-24"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-24"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-25"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-25"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-25"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-25"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-25"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-26"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-26"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-26"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-26"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-26"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-27"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-27"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-27"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-27"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-27"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-28"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-28"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-28"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-28"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-28"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-29"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-29"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-29"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-29"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-29"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-30"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-30"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-30"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-30"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-30"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-31"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-31"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-31"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-31"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-31"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-32"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-32"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-32"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-32"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-32"/>
+		
+		<img src="img/03-50.png" style="display: none;" id="img50-33"/>
+		<img src="img/06-10.png" style="display: none;" id="img10-33"/>
+		<img src="img/02-200.png" style="display: none;" id="img200-33"/>
+		<img src="img/04-500.png" style="display: none;" id="img500-33"/>
+		<img src="img/05-100.png" style="display: none;" id="img100-33"/>
+		
+
+	</body>
+
+</html>
